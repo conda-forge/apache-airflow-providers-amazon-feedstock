@@ -21,10 +21,9 @@ requirements:
     - setuptools
     - wheel
   run:
-    - apache-airflow >=2.0.0
-    - boto3 >=1.15.0,<1.16.0
-    - botocore >=1.18.0,<1.19.0
     - python >=3.6
+    - apache-airflow >=2.0.0
+    - boto3 >=1.15.0,<1.18.0
     - watchtower >=0.7.3,<0.8.0
 
 test:
