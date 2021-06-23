@@ -22,9 +22,9 @@ requirements:
     - wheel
   run:
     - python >=3.6
-    - apache-airflow >=2.0.0
+    - apache-airflow >=2.1.0
     - boto3 >=1.15.0,<1.18.0
-    - watchtower >=0.7.3,<0.8.0
+    - watchtower >=1.0.6,<1.1.0
 
 test:
   imports:
