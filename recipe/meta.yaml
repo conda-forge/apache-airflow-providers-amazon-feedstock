@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-amazon" %}
-{% set version = "2.2.0" %}
+{% set version = "2.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-airflow-providers-amazon-{{ version }}.tar.gz
-  sha256: 4cd8fe5aa45f5d01b30d0da76a969c66ad99408b371940b07b58391711b1642d
+  sha256: 20b81b83751e2e1e0b4037cae021f45a548d62ca8606133e83c4c79c61d563d2
 
 build:
   number: 0
@@ -23,7 +23,7 @@ requirements:
   run:
     - python >=3.6
     - apache-airflow >=2.1.0
-    - boto3 >=1.15.0,<1.18.0
+    - boto3 >=1.15.0,<1.19.0
     - jsonpath-ng >=1.5.3
     - watchtower >=1.0.6,<1.1.0
 
