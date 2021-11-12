@@ -25,7 +25,10 @@ requirements:
     - apache-airflow >=2.1.0
     - boto3 >=1.15.0,<1.19.0
     - jsonpath-ng >=1.5.3
-    - watchtower >=1.0.6,<1.1.0
+    - pandas >=0.17.1,<2.0
+    - redshift_connector >=2.0.888,<2.1
+    - sqlalchemy_redshift >=0.8.6,<0.9
+    - watchtower >=1.0.6,<1.1
 
 test:
   imports:
