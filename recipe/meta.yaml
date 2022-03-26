@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-amazon" %}
-{% set version = "3.0.0" %}
+{% set version = "3.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-airflow-providers-amazon-{{ version }}.tar.gz
-  sha256: c6d5d779698fc984e5695e758b2549cfcaba906e6b86bc89b5b45ef5da987670
+  sha256: d7724f15a50dd7e285cc3be46bb66d2b90177c825f0805c71aadb2dad73e6026
 
 build:
   number: 0
