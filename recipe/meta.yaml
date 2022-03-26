@@ -10,25 +10,26 @@ source:
   sha256: d7724f15a50dd7e285cc3be46bb66d2b90177c825f0805c71aadb2dad73e6026
 
 build:
-  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
-    - pip
     - python >=3.7
+    - pip
     - setuptools
-    - wheel
   run:
     - python >=3.7
     - apache-airflow >=2.1.0
-    - boto3 >=1.15.0,<2.0.0
+    - boto3 >=1.15.0
     - jsonpath-ng >=1.5.3
-    - pandas >=0.17.1,<1.4
-    - redshift_connector >=2.0.888,<2.1
-    - sqlalchemy-redshift >=0.8.6,<0.9
-    - watchtower >=2.0.1,<2.1
+    - mypy-boto3-redshift-data >=1.21.0
+    - mypy_boto3_rds >=1.21.0
+    - pandas >=0.17.1
+    - redshift_connector >=2.0.888
+    - sqlalchemy-redshift >=0.8.6
+    - watchtower >=2.0.1,==2.0.*
 
 test:
   imports:
@@ -41,9 +42,10 @@ test:
 
 about:
   home: https://airflow.apache.org/
-  summary: Provider for Amazon integration (including Amazon Web Services, AWS) for Apache Airflow
+  summary: Provider for Apache Airflow. Implements apache-airflow-providers-amazon package
   license: Apache-2.0
   license_file: LICENSE
+  license_family: Apache
   doc_url: https://airflow.apache.org/docs/apache-airflow-providers-amazon/stable/index.html
   dev_url: https://github.com/apache/airflow/
 
