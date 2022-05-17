@@ -29,7 +29,8 @@ requirements:
     - pandas >=0.17.1
     - redshift_connector >=2.0.888
     - sqlalchemy-redshift >=0.8.6
-    - watchtower >=2.0.1,<2.1
+    - watchtower >=2.0.1,==2.0.*
+    - xmltodict <0.13.0
 
 test:
   imports:
