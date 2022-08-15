@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-amazon" %}
-{% set version = "4.0.0" %}
+{% set version = "5.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-airflow-providers-amazon-{{ version }}.tar.gz
-  sha256: aca7fb3980463ce72a65579086b9a89164f393c54812c357ac3ac82c88fc0ac6
+  sha256: 67ec1c5787868451ca7d3b31fb58ee9dad0bc9e9ded9836a5a37f34ecdfd61da
 
 build:
   noarch: python
@@ -22,8 +22,10 @@ requirements:
   run:
     - python >=3.7
     - apache-airflow >=2.2.0
+    - apache-airflow-providers-common-sql
     - boto3 >=1.15.0
     - jsonpath-ng >=1.5.3
+    - mypy-boto3-appflow >=1.21.0
     - mypy-boto3-redshift-data >=1.21.0
     - mypy_boto3_rds >=1.21.0
     - pandas >=0.17.1
