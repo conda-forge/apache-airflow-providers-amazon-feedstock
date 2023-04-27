@@ -32,6 +32,9 @@ requirements:
     - redshift_connector >=2.0.888
     - sqlalchemy-redshift >=0.8.6
     - watchtower >=2.0.1,<2.1.dev0
+    # temporary constrain because of dependency fails in https://github.com/conda-forge/connexion-feedstock/pull/34
+    - werkzeug >=1.0,<2.3
+    - flask >=1.0.4,<2.3
 
 test:
   imports:
