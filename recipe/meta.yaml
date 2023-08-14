@@ -27,7 +27,7 @@ requirements:
     - asgiref
     - boto3 >=1.24.0
     - jsonpath-ng >=1.5.3
-    - mypy-boto3-appflow >=1.24.0,<1.28.12
+    - mypy-boto3-appflow >=1.28.16
     - mypy_boto3_rds >=1.24.0
     - mypy-boto3-redshift-data >=1.24.0
     - mypy-boto3-s3 >=1.24.0
