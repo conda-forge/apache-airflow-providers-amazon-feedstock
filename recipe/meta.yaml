@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-amazon" %}
-{% set version = "8.7.1" %}
+{% set version = "8.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-airflow-providers-amazon-{{ version }}.tar.gz
-  sha256: 684d9c4c920ca1ecda76cfd97cbb6c9beeb8c94534a595ac674a5e9ad3db4e30
+  sha256: 0c363dca2b3d685e3d03a6afcd356fc6b9744d389de6ae00a3958a580c332476
 
 build:
   noarch: python
@@ -23,17 +23,14 @@ requirements:
     - python >=3.8
     - apache-airflow-providers-common-sql >=1.3.1
     - apache-airflow-providers-http
-    - apache-airflow >=2.4.0
+    - apache-airflow >=2.5.0
     - asgiref
     - boto3 >=1.28.0
     - botocore >=1.31.0
     - jsonpath-ng >=1.5.3
     - redshift_connector >=2.0.888
     - sqlalchemy-redshift >=0.8.6
-    - watchtower >=2.0.1,<2.1.dev0
-    # temporary constrain because of dependency fails in https://github.com/conda-forge/connexion-feedstock/pull/34
-    - werkzeug >=1.0,<2.3
-    - flask >=1.0.4,<2.3
+    - watchtower >=3.0.1,<3.1.dev0
 
 test:
   imports:
