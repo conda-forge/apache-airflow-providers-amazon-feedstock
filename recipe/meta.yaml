@@ -35,7 +35,7 @@ requirements:
 
 test:
   imports:
-    - apache_airflow_providers_amazon
+    - airflow.providers.amazon
   commands:
     - pip check
   requires:
