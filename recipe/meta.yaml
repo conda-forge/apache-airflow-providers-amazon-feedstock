@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-amazon" %}
-{% set version = "8.20.0" %}
+{% set version = "8.21.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_amazon-{{ version }}.tar.gz
-  sha256: cb4323bbf027dc53668a7543743b7e2ff71518861fb98cc81e751b338cc0017b
+  sha256: a204afb36018a45cb397c688c57c4a0d7784f6385800471c2b12c809d7117556
 
 build:
   noarch: python
@@ -20,10 +20,11 @@ requirements:
     - flit-core >=3.2,<4
     - pip
   run:
+    - xmlsec <1.3.14
     - python >=3.8
     - apache-airflow-providers-common-sql >=1.3.1
     - apache-airflow-providers-http
-    - apache-airflow >=2.6.0
+    - apache-airflow >=2.7.0
     - asgiref
     - boto3 >=1.33.0
     - botocore >=1.33.0
