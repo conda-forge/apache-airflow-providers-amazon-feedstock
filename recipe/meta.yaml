@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-amazon" %}
-{% set version = "8.28.0" %}
+{% set version = "8.29.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_amazon-{{ version }}.tar.gz
-  sha256: b86b99da896bbaa3e7f9844c7620214ca46fa9e35f962e9d516c563e775692f0
+  sha256: b46d6492032cac0ecbc06652beb8e7130e22d1431658bb9084b38ee868451f84
 
 build:
   noarch: python
@@ -32,9 +32,10 @@ requirements:
     - jmespath >=0.7.0
     - jsonpath-ng >=1.5.3
     - pyathena >=3.0.10
+    - python3-saml >=1.16.0
     - redshift_connector >=2.0.918
     - sqlalchemy-redshift >=0.8.6
-    - watchtower >=3.0.0,<4
+    - watchtower >=3.0.0,!=3.3.0,<4
 
 test:
   imports:
