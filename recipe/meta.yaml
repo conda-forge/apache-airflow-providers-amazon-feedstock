@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_amazon-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_amazon-{{ version }}.tar.gz
   sha256: 7ded0b962e6b91f7221772d95e27efa212fe13e408a0137b4098eca329f8dbc3
 
 build:
@@ -16,11 +16,11 @@ build:
 
 requirements:
   host:
-    - python >=3.8,<4.dev0
-    - flit-core >=3.2,<4
+    - python {{ python_min }}
+    - flit-core ==3.10.1
     - pip
   run:
-    - python >=3.8,<4.dev0
+    - python >={{ python_min }}
     - apache-airflow-providers-common-compat >=1.2.1
     - apache-airflow-providers-common-sql >=1.20.0
     - apache-airflow-providers-http
@@ -34,7 +34,6 @@ requirements:
     - pyathena >=3.0.10
     - python3-saml >=1.16.0
     - redshift_connector >=2.0.918
-    - sqlalchemy-redshift >=0.8.6
     - watchtower >=3.0.0,!=3.3.0,<4
 
 test:
@@ -43,6 +42,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
