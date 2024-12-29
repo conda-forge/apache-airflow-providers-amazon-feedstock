@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-amazon" %}
-{% set version = "9.1.0" %}
+{% set version = "9.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_amazon-{{ version }}.tar.gz
-  sha256: 7ded0b962e6b91f7221772d95e27efa212fe13e408a0137b4098eca329f8dbc3
+  sha256: d525e7d703f9fa58dc10f39ca7f7c3e8c7a65759a0a59fe5979998464abf3a9e
 
 build:
   noarch: python
@@ -21,10 +21,10 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - apache-airflow-providers-common-compat >=1.2.1
+    - apache-airflow-providers-common-compat >=1.3.0
     - apache-airflow-providers-common-sql >=1.20.0
     - apache-airflow-providers-http
-    - apache-airflow >=2.8.0
+    - apache-airflow >=2.9.0
     - asgiref >=2.3.0
     - boto3 >=1.34.90
     - botocore >=1.34.90
