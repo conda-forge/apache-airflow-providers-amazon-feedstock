@@ -61,6 +61,7 @@ outputs:
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage(name, max_pin='x.x.x.x.x.x') }}
+        - apache-airflow >=3.0.2
         - aiobotocore >=2.21.1
         # from aiobotocore[boto3] dependent on aiobotocore version so leaving it out
     test:
