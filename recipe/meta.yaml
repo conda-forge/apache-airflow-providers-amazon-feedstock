@@ -62,8 +62,7 @@ outputs:
         - python >={{ python_min }}
         - {{ pin_subpackage(name, max_pin='x.x.x.x.x.x') }}
         - aiobotocore >=2.21.1
-        # from aiobotocore[boto3]
-        - boto3 <1.37.2,>=1.37.0
+        # from aiobotocore[boto3] dependent on aiobotocore version so leaving it out
     test:
       imports:
         - airflow.providers.amazon
