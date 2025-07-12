@@ -1,6 +1,6 @@
 {% set name = "apache-airflow-providers-amazon" %}
 {% set version = "9.10.0" %}
-{% set python_min_openlineage = "3.10" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name }}-split
@@ -295,9 +295,9 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python {{ python_min_openlineage }}
+        - python {{ python_min }}
       run:
-        - python >={{ python_min_openlineage }}
+        - python >={{ python_min }}
         - {{ pin_subpackage(name, max_pin='x.x.x.x.x.x') }}
         - apache-airflow-providers-openlineage >=2.3.0
     test:
@@ -306,7 +306,7 @@ outputs:
       commands:
         - pip check
       requires:
-        - python {{ python_min_openlineage }}
+        - python {{ python_min }}
         - pip
 
   - name: {{ name }}-with-salesforce
