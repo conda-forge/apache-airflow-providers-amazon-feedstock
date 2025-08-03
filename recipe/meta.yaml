@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-amazon" %}
-{% set version = "9.10.0" %}
+{% set version = "9.11.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_amazon-{{ version }}.tar.gz
-  sha256: d4a097ed98b200357005d0c93b9099c7942d6681126ae59f06dc44c67d1739d2
+  sha256: b06b6f6cb469bb1ceeeac5a04de658dae6082daa1ddfa851463f6ac49e5ba6b4
 
 build:
   noarch: python
@@ -185,7 +185,8 @@ outputs:
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage(name, max_pin='x.x.x.x.x.x') }}
-        - apache-airflow-providers-fab
+        # for all python to stay noarch: python
+        - apache-airflow-providers-fab >=2.2.0
     test:
       imports:
         - airflow.providers.amazon
