@@ -185,7 +185,8 @@ outputs:
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage(name, max_pin='x.x.x.x.x.x') }}
-        - apache-airflow-providers-fab
+        # for all python to stay noarch: python
+        - apache-airflow-providers-fab >=2.2.0
     test:
       imports:
         - airflow.providers.amazon
