@@ -376,7 +376,7 @@ outputs:
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage(name, max_pin='x.x.x.x.x.x') }}
-        - apache-airflow-providers-common-messaging >=1.0.1
+        - apache-airflow-providers-common-messaging >=1.0.3
     test:
       imports:
         - airflow.providers.amazon
