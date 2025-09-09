@@ -1,6 +1,5 @@
 {% set name = "apache-airflow-providers-amazon" %}
 {% set version = "9.13.0" %}
-{% set python_min = "3.10" %}
 
 package:
   name: {{ name }}-split
@@ -376,7 +375,7 @@ outputs:
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage(name, max_pin='x.x.x.x.x.x') }}
-        - apache-airflow-providers-common-messaging >=1.0.3
+        - apache-airflow-providers-common-messaging >=2.0.0
     test:
       imports:
         - airflow.providers.amazon
