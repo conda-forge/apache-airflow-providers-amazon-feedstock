@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-amazon" %}
-{% set version = "9.16.0" %}
+{% set version = "9.17.0" %}
 
 package:
   name: {{ name }}-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_amazon-{{ version }}.tar.gz
-  sha256: a442e685df44f19aad3aef152b4c2920a8bb92a01b9ac7813af0e8fcc1cda070
+  sha256: ba7529a0f3c0fa6ed910c1b2ec9c765899e24ae87d28a12793d6d09619297c7b
 
 build:
   noarch: python
@@ -39,7 +39,8 @@ outputs:
         - asgiref >=2.3.0
         - pyathena >=3.10.0
         - jmespath >=0.7.0
-        - sagemaker-studio >=1.0.9
+        # more restrictive for python >=3.13
+        - sagemaker-studio >=1.0.9,<1.1.0
         - marshmallow >=3
 
     test:
@@ -386,10 +387,12 @@ outputs:
         - pip
 
 about:
-  home: https://airflow.apache.org/
+  home: https://github.com/apache/airflow/
   summary: Provider package apache-airflow-providers-amazon for Apache Airflow
   license: Apache-2.0
-  license_file: src/airflow/providers/amazon/LICENSE
+  license_file:
+    - LICENSE
+    - NOTICE
   license_family: Apache
   doc_url: https://airflow.apache.org/docs/apache-airflow-providers-amazon/stable/index.html
   dev_url: https://github.com/apache/airflow/
