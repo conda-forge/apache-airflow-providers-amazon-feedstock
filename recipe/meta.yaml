@@ -26,8 +26,8 @@ outputs:
         - pip
       run:
         - python >={{ python_min }}
-        - apache-airflow >=2.10.0
-        - apache-airflow-providers-common-compat >=1.8.0
+        - apache-airflow >=2.11.0
+        - apache-airflow-providers-common-compat >=1.10.0
         - apache-airflow-providers-common-sql >=1.27.0
         - apache-airflow-providers-http
         - boto3 >=1.37.2
@@ -39,8 +39,11 @@ outputs:
         - asgiref >=2.3.0
         - pyathena >=3.10.0
         - jmespath >=0.7.0
-        # more restrictive for python >=3.13
-        - sagemaker-studio >=1.0.9,<1.1.0
+        - sagemaker-studio >=1.0.9
+        # for python >=3.13 but want to stay noarch: python
+        - pydynamodb >=0.7.5
+        # for python >=3.13 but want to stay noarch: python
+        - sqlean.py >=3.47.0
         - marshmallow >=3
 
     test:
