@@ -48,7 +48,7 @@ outputs:
 
         # temporarily constraint pynacl to pass pip check, since conda-forge's 
         # pynacl 1.6.1 has looser cffi constraints than upstream
-        pynacl <1.6.1
+        - pynacl <1.6.1
 
     test:
       imports:
