@@ -46,6 +46,10 @@ outputs:
         - sqlean.py >=3.47.0
         - marshmallow >=3
 
+        # temporarily constraint pynacl to pass pip check, since conda-forge's 
+        # pynacl 1.6.1 has looser cffi constraints than upstream
+        pynacl <1.6.1
+
     test:
       imports:
         - airflow.providers.amazon
