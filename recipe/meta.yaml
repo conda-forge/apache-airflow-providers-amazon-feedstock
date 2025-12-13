@@ -27,7 +27,7 @@ outputs:
       run:
         - python >={{ python_min }}
         - apache-airflow >=2.11.0
-        - apache-airflow-providers-common-compat >=1.10.0
+        - apache-airflow-providers-common-compat >=1.10.1
         - apache-airflow-providers-common-sql >=1.27.0
         - apache-airflow-providers-http
         - boto3 >=1.37.2
@@ -288,6 +288,26 @@ outputs:
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage(name, max_pin='x.x.x.x.x.x') }}
+        - apache-airflow-providers-mongo
+    test:
+      imports:
+        - airflow.providers.amazon
+      commands:
+        - pip check
+      requires:
+        - python {{ python_min }}
+        - pip
+
+  - name: {{ name }}-with-pandas
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python {{ python_min }}
+      run:
+        - python >={{ python_min }}
+        - {{ pin_subpackage(name, max_pin='x.x.x.x.x.x') }}
+        # more restrictive constraint for py >=3.13
         - apache-airflow-providers-mongo
     test:
       imports:
