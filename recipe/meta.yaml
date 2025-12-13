@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-amazon" %}
-{% set version = "9.18.0" %}
+{% set version = "9.18.1" %}
 
 package:
   name: {{ name }}-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_amazon-{{ version }}.tar.gz
-  sha256: c851eeeb6f7350a0a9ea506bce53348dc798a73c6b6449a5793a950451b87b68
+  sha256: e71eb4b53c90f001bfcc4cdadb5203672cc66f019f1d123b9981dd5de50b2873
 
 build:
   noarch: python
@@ -27,7 +27,7 @@ outputs:
       run:
         - python >={{ python_min }}
         - apache-airflow >=2.11.0
-        - apache-airflow-providers-common-compat >=1.10.0
+        - apache-airflow-providers-common-compat >=1.10.1
         - apache-airflow-providers-common-sql >=1.27.0
         - apache-airflow-providers-http
         - boto3 >=1.37.2
@@ -288,6 +288,26 @@ outputs:
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage(name, max_pin='x.x.x.x.x.x') }}
+        - apache-airflow-providers-mongo
+    test:
+      imports:
+        - airflow.providers.amazon
+      commands:
+        - pip check
+      requires:
+        - python {{ python_min }}
+        - pip
+
+  - name: {{ name }}-with-pandas
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python {{ python_min }}
+      run:
+        - python >={{ python_min }}
+        - {{ pin_subpackage(name, max_pin='x.x.x.x.x.x') }}
+        # more restrictive constraint for py >=3.13
         - apache-airflow-providers-mongo
     test:
       imports:
