@@ -5,6 +5,7 @@ schema_version: 1
 context:
   name: apache-airflow-providers-amazon
   version: 9.18.1
+  latest_airflow: 3.1.5
 
 recipe:
   name: ${{ name|lower }}
@@ -83,7 +84,7 @@ outputs:
             - pip
             # temporarily test with latest airflow because issues with missing
             # circular dependencies in some apache-airflow-task-sdk builds
-            - apache-airflow >=3.0.2
+            - apache-airflow ${{ latest_airflow }}.* 
         script:
           - python -c "import airflow.providers.amazon"
           - pip check
@@ -126,7 +127,7 @@ outputs:
             - pip
             # temporarily test with latest airflow because issues with missing
             # circular dependencies in some apache-airflow-task-sdk builds
-            - apache-airflow >=3.0.2
+            - apache-airflow ${{ latest_airflow }}.* 
         script:
           - python -c "import airflow.providers.amazon"
           - pip check
@@ -169,6 +170,9 @@ outputs:
           run:
             - python ${{ python_min }}.*
             - pip
+            # temporarily test with latest airflow because issues with missing
+            # circular dependencies in some apache-airflow-task-sdk builds
+            - apache-airflow ${{ latest_airflow }}.* 
         script:
           - python -c "import airflow.providers.amazon"
           - pip check
@@ -189,6 +193,9 @@ outputs:
           run:
             - python ${{ python_min }}.*
             - pip
+            # temporarily test with latest airflow because issues with missing
+            # circular dependencies in some apache-airflow-task-sdk builds
+            - apache-airflow ${{ latest_airflow }}.* 
         script:
           - python -c "import airflow.providers.amazon"
           - pip check
@@ -210,6 +217,9 @@ outputs:
           run:
             - python ${{ python_min }}.*
             - pip
+            # temporarily test with latest airflow because issues with missing
+            # circular dependencies in some apache-airflow-task-sdk builds
+            - apache-airflow ${{ latest_airflow }}.* 
         script:
           - python -c "import airflow.providers.amazon"
           - pip check
@@ -230,6 +240,9 @@ outputs:
           run:
             - python ${{ python_min }}.*
             - pip
+            # temporarily test with latest airflow because issues with missing
+            # circular dependencies in some apache-airflow-task-sdk builds
+            - apache-airflow ${{ latest_airflow }}.* 
         script:
           - python -c "import airflow.providers.amazon"
           - pip check
@@ -250,6 +263,9 @@ outputs:
           run:
             - python ${{ python_min }}.*
             - pip
+            # temporarily test with latest airflow because issues with missing
+            # circular dependencies in some apache-airflow-task-sdk builds
+            - apache-airflow ${{ latest_airflow }}.* 
         script:
           - python -c "import airflow.providers.amazon"
           - pip check
@@ -270,6 +286,9 @@ outputs:
           run:
             - python ${{ python_min }}.*
             - pip
+            # temporarily test with latest airflow because issues with missing
+            # circular dependencies in some apache-airflow-task-sdk builds
+            - apache-airflow ${{ latest_airflow }}.* 
         script:
           - python -c "import airflow.providers.amazon"
           - pip check
@@ -290,6 +309,9 @@ outputs:
           run:
             - python ${{ python_min }}.*
             - pip
+            # temporarily test with latest airflow because issues with missing
+            # circular dependencies in some apache-airflow-task-sdk builds
+            - apache-airflow ${{ latest_airflow }}.* 
         script:
           - python -c "import airflow.providers.amazon"
           - pip check
@@ -310,6 +332,9 @@ outputs:
           run:
             - python ${{ python_min }}.*
             - pip
+            # temporarily test with latest airflow because issues with missing
+            # circular dependencies in some apache-airflow-task-sdk builds
+            - apache-airflow ${{ latest_airflow }}.* 
         script:
           - python -c "import airflow.providers.amazon"
           - pip check
@@ -331,6 +356,9 @@ outputs:
           run:
             - python ${{ python_min }}.*
             - pip
+            # temporarily test with latest airflow because issues with missing
+            # circular dependencies in some apache-airflow-task-sdk builds
+            - apache-airflow ${{ latest_airflow }}.* 
         script:
           - python -c "import airflow.providers.amazon"
           - pip check
@@ -351,6 +379,9 @@ outputs:
           run:
             - python ${{ python_min }}.*
             - pip
+            # temporarily test with latest airflow because issues with missing
+            # circular dependencies in some apache-airflow-task-sdk builds
+            - apache-airflow ${{ latest_airflow }}.* 
         script:
           - python -c "import airflow.providers.amazon"
           - pip check
@@ -371,6 +402,9 @@ outputs:
           run:
             - python ${{ python_min }}.*
             - pip
+            # temporarily test with latest airflow because issues with missing
+            # circular dependencies in some apache-airflow-task-sdk builds
+            - apache-airflow ${{ latest_airflow }}.* 
         script:
           - python -c "import airflow.providers.amazon"
           - pip check
@@ -391,6 +425,9 @@ outputs:
           run:
             - python ${{ python_min }}.*
             - pip
+            # temporarily test with latest airflow because issues with missing
+            # circular dependencies in some apache-airflow-task-sdk builds
+            - apache-airflow ${{ latest_airflow }}.* 
         script:
           - python -c "import airflow.providers.amazon"
           - pip check
@@ -411,6 +448,9 @@ outputs:
           run:
             - python ${{ python_min }}.*
             - pip
+            # temporarily test with latest airflow because issues with missing
+            # circular dependencies in some apache-airflow-task-sdk builds
+            - apache-airflow ${{ latest_airflow }}.* 
         script:
           - python -c "import airflow.providers.amazon"
           - pip check
@@ -431,6 +471,9 @@ outputs:
           run:
             - python ${{ python_min }}.*
             - pip
+            # temporarily test with latest airflow because issues with missing
+            # circular dependencies in some apache-airflow-task-sdk builds
+            - apache-airflow ${{ latest_airflow }}.* 
         script:
           - python -c "import airflow.providers.amazon"
           - pip check
