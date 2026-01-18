@@ -477,28 +477,30 @@ outputs:
           - python -c "import airflow.providers.amazon"
           - pip check
 
-  - package:
-      name: ${{ name }}-with-sqlalchemy
-    build:
-      noarch: python
-    requirements:
-      host:
-        - python ${{ python_min }}.*
-      run:
-        - python >=${{ python_min }}
-        - ${{ pin_subpackage(name, exact=True) }}
-        - sqlalchemy >=1.4.49
-    tests:
-      - requirements:
-          run:
-            - python ${{ python_min }}.*
-            - pip
-            # temporarily test with latest airflow because issues with missing
-            # circular dependencies in some apache-airflow-task-sdk builds
-            - apache-airflow ${{ latest_airflow }}.*
-        script:
-          - python -c "import airflow.providers.amazon"
-          - pip check
+  # Would need to be added as a new output in admin requests.  Let's see if
+  # anyone needs it first.
+  # - package:
+  #     name: ${{ name }}-with-sqlalchemy
+  #   build:
+  #     noarch: python
+  #   requirements:
+  #     host:
+  #       - python ${{ python_min }}.*
+  #     run:
+  #       - python >=${{ python_min }}
+  #       - ${{ pin_subpackage(name, exact=True) }}
+  #       - sqlalchemy >=1.4.49
+  #   tests:
+  #     - requirements:
+  #         run:
+  #           - python ${{ python_min }}.*
+  #           - pip
+  #           # temporarily test with latest airflow because issues with missing
+  #           # circular dependencies in some apache-airflow-task-sdk builds
+  #           - apache-airflow ${{ latest_airflow }}.*
+  #       script:
+  #         - python -c "import airflow.providers.amazon"
+  #         - pip check
 
 about:
   homepage: https://github.com/apache/airflow/
