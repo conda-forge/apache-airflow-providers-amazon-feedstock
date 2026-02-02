@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   name: apache-airflow-providers-amazon
-  version: "9.20.0"
+  version: "9.21.0"
   latest_airflow: 3.1.5
 
 recipe:
@@ -12,7 +12,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_amazon-${{ version }}.tar.gz
-  sha256: 17b9a09ceb9f9fe7bb64f6289e4769c282b1aefde5ab7d590e3d14db5bf06363
+  sha256: e9541aabffeba1f2ac6f93407361568473714bb5c77407886ae71b1b6472c0f9
 
 build:
   noarch: python
