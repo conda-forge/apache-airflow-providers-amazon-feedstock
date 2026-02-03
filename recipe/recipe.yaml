@@ -187,6 +187,8 @@ outputs:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name, exact=True) }}
         - apache-airflow-providers-exasol
+        # temporary constraint so pip check passes
+        - packaging <26.0.0,>=24.1.0
     tests:
       - requirements:
           run:
