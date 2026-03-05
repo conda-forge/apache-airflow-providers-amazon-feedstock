@@ -48,8 +48,9 @@ outputs:
         - sqlean.py >=3.47.0
         - marshmallow >=3
 
-        # temproary constraint to avoid pip check problems
+        # temproary constraints to avoid pip check problems
         - pyiceberg >=0.8.1
+        - pynacl <1.6.1
     tests:
       - requirements:
           run:
