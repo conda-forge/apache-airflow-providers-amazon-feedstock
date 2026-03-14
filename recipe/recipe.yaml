@@ -154,6 +154,8 @@ outputs:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name, exact=True) }}
         - apache-airflow-providers-exasol
+        # temporary constraint because of bad pyexasol dependencies
+        - packaging >=24.1.0,<26.0.0
     tests:
       - requirements:
           run:
