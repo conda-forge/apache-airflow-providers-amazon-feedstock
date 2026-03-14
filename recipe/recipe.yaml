@@ -1,7 +1,7 @@
 context:
   name: apache-airflow-providers-amazon
   version: "9.23.0"
-  latest_airflow: 3.1.7
+  latest_airflow: 3.1.8
 
 recipe:
   name: ${{ name|lower }}
@@ -47,10 +47,6 @@ outputs:
         # more restrictive for python >=3.13
         - sqlean.py >=3.47.0
         - marshmallow >=3
-
-        # temproary constraints to avoid pip check problems
-        - pyiceberg >=0.8.1
-        - pynacl <1.6.1
     tests:
       - requirements:
           run:
@@ -158,8 +154,6 @@ outputs:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name, exact=True) }}
         - apache-airflow-providers-exasol
-        # temporary constraint because of bad pyexasol dependencies
-        - packaging >=24.1.0,<26.0.0
     tests:
       - requirements:
           run:
@@ -180,7 +174,6 @@ outputs:
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage(name, exact=True) }}
-        # conditional for python <3.13
         - apache-airflow-providers-fab >=2.2.0
     tests:
       - requirements:
