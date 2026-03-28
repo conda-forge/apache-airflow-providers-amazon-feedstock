@@ -44,6 +44,10 @@ outputs:
         - jmespath >=0.7.0
         - sagemaker-studio >=1.0.25,<1.1.0
         - marshmallow >=3
+
+        # temproary constraints to avoid pip check problems
+        - pyiceberg >=0.8.1
+        - pynacl <1.6.1    
     tests:
       - requirements:
           run:
